@@ -158,7 +158,7 @@ func dataSourceAwsRoute53ZoneRead(d *schema.ResourceData, meta interface{}) erro
 		}
 	}
 	if hostedZoneFound == nil {
-		return fmt.Errorf("no matching Route53Zone found")
+		return fmt.Errorf("no matching Route53Zone found for %v", name)
 	}
 
 	idHostedZone := cleanZoneID(*hostedZoneFound.Id)
